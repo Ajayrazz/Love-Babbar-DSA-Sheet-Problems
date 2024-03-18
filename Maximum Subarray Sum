@@ -1,0 +1,21 @@
+import java.util.* ;
+import java.io.*; 
+
+public class Solution {
+	
+	public static long maxSubarraySum(int[] arr, int n) {
+		// write your code here
+		//using kadanes algorithm
+		long maxsum = Integer.MIN_VALUE;
+		long currentsum = 0;
+		for(int i=0; i<n; i++){
+			currentsum += arr[i];
+			if(currentsum < 0){
+				currentsum = 0;
+			}
+			maxsum = Math.max(currentsum , maxsum);
+		}
+		return maxsum;
+	}
+
+}
