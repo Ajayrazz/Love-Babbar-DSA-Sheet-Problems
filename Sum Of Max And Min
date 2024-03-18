@@ -1,0 +1,21 @@
+import java.util.* ;
+import java.io.*; 
+public class Solution {
+  public static int sumOfMaxMin(int[] arr, int n) {
+      // Write your code here.
+      int max = Integer.MIN_VALUE;
+      int min = Integer.MAX_VALUE;
+      int start = 0;
+      int end = n-1;
+      while(start <= end){
+        if(arr[start] > max){
+          max = arr[start];
+        }
+        if(arr[start] < min){
+          min = arr[start];
+        }
+        start++;
+      }
+      return min+max;
+  }
+}
